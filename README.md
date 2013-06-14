@@ -1,4 +1,4 @@
-validate.js
+validate
 ===========
 
 Form validation script
