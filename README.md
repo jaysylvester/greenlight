@@ -1,13 +1,7 @@
 greenlight
 ===========
 
-Name:				greenlight
-Type:				jQuery plugin
-Author:			Jay Sylvester
-Date Created:	15-Nov-2010
-Last Modified:	06-Jun-2013
-
-Purpose:			Performs form field validation.
+This plugin (currently in jQuery format, soon to be stripped of this dependency) performs form field validation.
 
 All inputs must have a valid ID. A list of IDs is returned when fields fail validation.
 
