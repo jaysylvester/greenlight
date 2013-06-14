@@ -22,45 +22,41 @@ Data validation is based upon the input's PATTERN attribute first, followed
 by the TYPE attribute if PATTERN isn't specified. ASCII 0-255 is assumed
 when no TYPE is present or TYPE is "text".
 
-	<input id="phone-field" name="phone" type="tel" value="" required />
+<input id="phone-field" name="phone" type="tel" value="" required />
 
-
-Additional validation is provided based on the following:
-
-	1.	Credit cards can be validated based on the LUHN algorithm by placing
-		a class of "credit-card-number" on the input.
+Credit cards can be validated based on the LUHN algorithm by placing a class of "credit-card-number" on the input.
 		
-		<input id="cc-number" name="cc-number" class="credit-card-number" value="" required />
+<input id="cc-number" name="cc-number" class="credit-card-number" value="" required />
 
 
 To validate matching fields (e-mail confirmation, for example), one of the
 fields must have a custom attribute of DATA-MATCH-FIELD containing the ID
 of the matching field.
 
-	<input id="email" name="email" type="email" value="" required />
-	<input id="email-confirm" name="email-confirm" type="email" value="" data-match-field="email" required />
+<input id="email" name="email" type="email" value="" required />
+<input id="email-confirm" name="email-confirm" type="email" value="" data-match-field="email" required />
 
 
 Usage examples:
 
-	You can validate an entire form on submit, prevent submission on failure,
-	and add markup to flag and show errors. If you want to stop
-	the form from submitting if there's an error, you must pass both the
-	event (e) and the stopOnFail option.
-	
-	$('form').on('submit.validate', function(e) {
-		$(this).greenlight({
-			e : e,
-			stopOnFail : true,
-			listFields : true,
-			returnType : 'html'
-		});
+You can validate an entire form on submit, prevent submission on failure,
+and add markup to flag and show errors. If you want to stop
+the form from submitting if there's an error, you must pass both the
+event (e) and the stopOnFail option.
+
+$('form').on('submit.validate', function(e) {
+	$(this).greenlight({
+		e : e,
+		stopOnFail : true,
+		listFields : true,
+		returnType : 'html'
 	});
+});
 
 
-	You can also validate a single field and return feedback data only.
+You can also validate a single field and return feedback data only.
 
-	var emailValidation = $('#email-field').greenlight();
-	if ( emailValidation.success ) {
-		*** do a jig ***
-	};
+var emailValidation = $('#email-field').greenlight();
+if ( emailValidation.success ) {
+	// do a jig
+};
